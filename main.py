@@ -1,9 +1,11 @@
 import pygame
+from pygame.display import update
 
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from constants import *
 from player import Player
+from shot import Shot
 
 
 def main():
@@ -23,6 +25,7 @@ def main():
     Asteroid.containers = (updateable, drawable, asteroids)
 
     AsteroidField.containers = (updateable,)
+    Shot.containers = (updateable, drawable)
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
